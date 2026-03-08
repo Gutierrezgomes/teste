@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hub de Avaliações: Git & PostgreSQL JSONB</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        
+        <div id="hub-view" class="view active">
+            <header class="hub-header">
+                <h1>Academia Git & JSONB</h1>
+                <p>Selecione o nível de dificuldade para iniciar seu treinamento.</p>
+            </header>
+            
+            <div class="level-grid">
+                <button class="level-btn basic" data-level="nivel1">
+                    <h3>Nível 1: Fundamentos</h3>
+                    <p>Conceitos básicos e comandos essenciais.</p>
+                </button>
+                <button class="level-btn beginner" data-level="nivel2">
+                    <h3>Nível 2: Iniciante Prático</h3>
+                    <p>Uso no dia a dia, branches e consultas simples.</p>
+                </button>
+                <button class="level-btn intermediate" data-level="nivel3">
+                    <h3>Nível 3: Intermediário</h3>
+                    <p>Merges, Pull Requests e filtros JSONB.</p>
+                </button>
+                <button class="level-btn advanced" data-level="nivel4">
+                    <h3>Nível 4: Avançado</h3>
+                    <p>Resolução de conflitos, índices e performance.</p>
+                </button>
+                <button class="level-btn expert" data-level="nivel5">
+                    <h3>Nível 5: Especialista</h3>
+                    <p>Rebase, histórico complexo e funções avançadas.</p>
+                </button>
+                <button class="level-btn master" data-level="final">
+                    <h3>Avaliação Final (Master)</h3>
+                    <p>Cenários reais de desastre e otimização extrema.</p>
+                </button>
+            </div>
+        </div>
+
+        <div id="quiz-view" class="view">
+            <header class="quiz-header">
+                <button id="btn-back" class="btn-secondary">← Voltar ao Hub</button>
+                <h2 id="quiz-title">Título do Quiz</h2>
+                <div class="score-display">Acertos: <span id="score">0</span>/15</div>
+            </header>
+            
+            <div id="questions-container">
+                </div>
+
+            <div class="quiz-footer hidden" id="quiz-footer">
+                <h3>Avaliação Concluída!</h3>
+                <button id="btn-finish" class="btn-primary">Retornar ao Hub</button>
+            </div>
+        </div>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+
+body { background-color: #f6f8fa; color: #24292f; line-height: 1.6; padding: 2rem 1rem; }
+
+.app-container { max-width: 800px; margin: 0 auto; }
+
+/* Controle de Telas (SPA) */
+.view { display: none; animation: fadeIn 0.4s ease; }
+.view.active { display: block; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Hub Styles */
+.hub-header { text-align: center; margin-bottom: 2.5rem; }
+.hub-header h1 { color: #0969da; font-size: 2.5rem; margin-bottom: 0.5rem; }
+.hub-header p { color: #57606a; font-size: 1.1rem; }
+
+.level-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; }
+
+.level-btn {
+    background: #fff; border: 2px solid #d0d7de; border-radius: 8px; padding: 1.5rem; text-align: left;
+    cursor: pointer; transition: all 0.2s ease; box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+.level-btn h3 { margin-bottom: 0.5rem; color: #24292f; }
+.level-btn p { color: #57606a; font-size: 0.9rem; }
+.level-btn:hover { transform: translateY(-3px); box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+
+/* Cores por dificuldade */
+.level-btn.basic:hover { border-color: #2da44e; }
+.level-btn.beginner:hover { border-color: #0969da; }
+.level-btn.intermediate:hover { border-color: #bf8700; }
+.level-btn.advanced:hover { border-color: #cf222e; }
+.level-btn.expert:hover { border-color: #8250df; }
+.level-btn.master { background: #24292f; border-color: #24292f; }
+.level-btn.master h3, .level-btn.master p { color: #fff; }
+.level-btn.master:hover { background: #000; transform: scale(1.02); }
+
+/* Quiz Styles */
+.quiz-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; background: #fff; padding: 1rem; border-radius: 8px; border: 1px solid #d0d7de;}
+.score-display { font-weight: bold; color: #0969da; background: #e9f3ff; padding: 0.5rem 1rem; border-radius: 20px;}
+
+.btn-secondary { background: transparent; border: 1px solid #d0d7de; padding: 0.5rem 1rem; border-radius: 6px; cursor: pointer; transition: 0.2s; }
+.btn-secondary:hover { background: #f3f4f6; }
+.btn-primary { background: #0969da; color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 6px; cursor: pointer; font-size: 1rem; font-weight: bold; width: 100%; transition: 0.2s; }
+.btn-primary:hover { background: #03499e; }
+
+.question-card { background: #ffffff; border: 1px solid #d0d7de; border-radius: 8px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 3px 6px rgba(140, 149, 159, 0.1); }
+.question-card h3 { margin-bottom: 1rem; font-size: 1.1rem; }
+
+.options { display: flex; flex-direction: column; gap: 0.5rem; }
+.option { background-color: #f6f8fa; border: 1px solid #d0d7de; border-radius: 6px; padding: 1rem; text-align: left; font-size: 1rem; cursor: pointer; transition: all 0.2s ease; }
+.option:hover:not(:disabled) { background-color: #e9ecef; border-color: #0969da; }
+.option:disabled { cursor: not-allowed; opacity: 0.8; }
+
+.option.correct { background-color: #dafbe1; border-color: #2da44e; color: #1a7f37; font-weight: bold; }
+.option.incorrect { background-color: #ffebe9; border-color: #cf222e; color: #a40e26; }
+
+.feedback { margin-top: 1rem; padding: 1rem; background-color: #e9f3ff; border-left: 4px solid #0969da; border-radius: 4px; display: none; font-size: 0.95rem; }
+.hidden { display: none !important; }
+.quiz-footer { text-align: center; margin-top: 2rem; padding: 2rem; background: #fff; border-radius: 8px; border: 1px solid #d0d7de; }
+.quiz-footer h3 { margin-bottom: 1rem; color: #2da44e; }
